@@ -1,0 +1,11 @@
+:root{
+    --primary-color: #8657db;
+    --secondary-color: #ffffff;
+    --dark-primary-color: #000000;
+    --dark-secondary-color: #8657db;
+}
+
+.page-layout{
+    display: grid;
+    background-color: var(--primary-color)
+}

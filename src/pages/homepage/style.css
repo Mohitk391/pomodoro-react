@@ -1,0 +1,27 @@
+
+.homepage-main{
+    height: 86vh;
+}
+
+.specialized-banner{
+    width: 60%;
+    height: 80%;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 1rem 0 var(--secondary-color);
+    background-color: var(--secondary-color) !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.banner-button{
+    width: 100%;
+    background-color: var(--primary-color) !important ;
+    color: var(--dark-primary-color) !important ;
+}
+
+.banner-button:hover{
+    background-color: var(--dark-primary-color) !important ;
+    color: var(--primary-color) !important ;
+}
