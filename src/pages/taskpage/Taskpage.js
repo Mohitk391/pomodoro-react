@@ -3,7 +3,7 @@ import { NavBar } from "../../components/NavBar/NavBar";
 import {useTask} from "../../contexts/TaskContext";
 import { CountdownCircleTimer } from "react-countdown-circle-timer";
 import "./Taskpage.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Taskpage = () => {
     const {taskState} = useTask();
@@ -11,7 +11,12 @@ const Taskpage = () => {
     const [key,setKey] = useState(0);
     const params = useParams();
     const task = taskState.tasks.find(current=> current.id===params.id);
+    const [titleTimer, setTitleTimer] = useState("");
 
+    useEffect(() => {
+        document.title = titleTimer + " | Pomodoro"
+    }, [titleTimer]);
+    
 
     const restartTimer = ()=> {
         setIsPlaying(false);
@@ -34,6 +39,7 @@ const Taskpage = () => {
                         {({remainingTime}) => {
                             const minutes = Math.floor(remainingTime / 60);
                             const seconds = remainingTime % 60;
+                            setTitleTimer(`${minutes}:${seconds}`)
                             return (
                             <div className="countdown-timer">
                                 {minutes}m : {seconds}s

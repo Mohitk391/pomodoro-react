@@ -56,8 +56,7 @@
 }
 
 .unfinished-task{
-    text-decoration: line-through;
-    color: var(--finished-task-color);
+    font-weight: 500;
 }
 
 .todo-actions >*{

@@ -83,7 +83,7 @@ const Todo = () => {
                         tasks.map(task => {
                             return (
                                 <div className="todo-task flex flex-space-between">
-                                    <p className={`task ${task.status=== 'finished' ? 'finished-task' : ''}`} onClick={()=>redirectToTask(task)}>
+                                    <p className={`task ${task.status=== 'finished' ? 'finished-task' : 'unfinished-task'}`} onClick={()=>redirectToTask(task)}>
                                         {task.name}
                                     </p>
                                     <div className="todo-actions flex flex-gap-1">
