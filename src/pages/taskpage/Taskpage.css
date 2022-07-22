@@ -1,0 +1,81 @@
+
+.task-main{
+    color: var(--secondary-color);
+    height: 86vh;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.task-body{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--secondary-color);
+    width: 50%;
+    height: max-content;
+    color: var(--dark-primary-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 var(--secondary-color);
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.task-timer{
+    height: 50%;
+    width: 80%;
+    align-self: center;
+}
+
+.task-actions{
+    width: 100%;
+}
+
+.task-action-buttons{
+    width: 80%;
+    align-self: center;
+}
+
+.task-action-buttons button {
+    border-radius: 1rem;
+}
+
+.primary-action{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.secondary-action{
+    background-color: var(--secondary-color);
+    outline : 2px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.task-details{
+    height: 100%;
+    widtH: 90%;
+}
+.task-info{
+    padding-top: 2rem;
+}
+
+.redirectToTodo{
+    justify-self: flex-start;
+}
+
+.redirect-btn{
+    color: var(--primary-color);
+    border-color: var(--primary-color) !important;
+    background-color: var(--secondary-color);
+}
+.task-title{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.task-description{
+    font-size: 0.9rem;
+}
+
+.countdown-timer{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
