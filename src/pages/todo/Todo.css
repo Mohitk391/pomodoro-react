@@ -1,0 +1,125 @@
+
+.todo-main{
+    color: var(--secondary-color);
+    height: 86vh;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.todo-header{
+    width: 50%;
+}
+
+.todo-heading{
+    font-size: 2rem;
+}
+
+.todo-body{
+    background-color: var(--secondary-color);
+    width: 50%;
+    height: max-content;
+    color: var(--dark-primary-color);
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem 0 var(--secondary-color);
+    align-items: center;
+}
+
+.content-header{
+    width: 80%;
+    padding: 2rem 2rem 1rem 2rem;
+}
+
+.content-header h3{
+    font-size: 1.5rem;
+}
+
+.addToDo{
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    align-self: center;
+    cursor: pointer;
+}
+
+.content-body{
+    width: 80%;
+    padding: 1rem 3rem;
+}
+
+.task{
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.finished-task{
+    text-decoration: line-through;
+    color: var(--finished-task-color);
+}
+
+.unfinished-task{
+    text-decoration: line-through;
+    color: var(--finished-task-color);
+}
+
+.task-actions >*{
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.task-overlay-layer{
+    position: absolute;
+    background-color: var(--overlay-bg); 
+    width: 100%;
+    height: 100vh;
+    color: var(--white);
+}
+
+.task-body{
+    background-color: var(--secondary-color);
+    color: var(--dark-primary-color);
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 1rem;
+    width: 20%;
+}
+
+.close{
+    border: 1px solid var(--bg-secondary);
+    padding: 2px;
+    width: 1.5625rem;
+    height: 1.5625rem;
+    border-radius: 1rem;
+    align-self: flex-end;
+}
+.close:hover{
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.task-contents input, #taskDescription{
+    border: none;
+    background-color: var(--bg-secondary);
+    outline:none;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+#taskDescription{
+    height: 100px;
+    resize: none;
+}
+
+.time-input{
+    justify-content: space-evenly;
+}
+
+.time-input input{
+    width:70px; 
+}
+
+.create-button{
+    width: 100%;
+}
+.create-button:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
