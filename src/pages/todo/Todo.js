@@ -3,12 +3,14 @@ import { useState } from "react";
 import {NavBar} from "../../components/NavBar/NavBar";
 import { useTask } from "../../contexts/TaskContext";
 import "./Todo.css";
+import { useNavigate } from "react-router-dom";
 
 const Todo = () => {
     const [overlay, toggleOverlay] = useState("hidden");
     const [overlayAction, setOverlayAction] = useState("Create");
     const [taskInputs, setTaskInputs] = useState({name:"", description: "", hours: "", minutes: "", seconds: "", id: ""});
     const {taskState:{tasks}, taskDispatch} = useTask();
+    const navigate = useNavigate();
 
     const createTask = (taskInputs)=>{
         const time = parseInt(taskInputs.seconds) + (parseInt(taskInputs.minutes) * 60) + (parseInt(taskInputs.hours) * 3600);
@@ -56,6 +58,11 @@ const Todo = () => {
         return {hours, mins, sec};
     }
 
+    const redirectToTask = (task) => {
+        taskDispatch({type: "UPDATE_TASK", payload: {...task, status: "finsihed"}});
+        navigate(`/task/${task.id}`);
+    }
+
     const resetInputs = () => setTaskInputs({name:"", description: "", hours: "", minutes: "", seconds: ""});
 
     return (
@@ -63,7 +70,7 @@ const Todo = () => {
         <NavBar />
         <main className="todo-main flex flex-column flex-gap-2">
             <div className="todo-header">
-                <h2 className="todo-heading">Welcome Rahul,</h2>
+                <h2 className="todo-heading">Welcome User,</h2>
                 <div className="todo-header-text">{tasks.length > 0 ? `You have ${tasks.length} tasks for today. All the best!!` : `Click on + to add new task.!!!`}</div>
             </div>
             <div className="todo-body flex flex-column">
@@ -76,8 +83,10 @@ const Todo = () => {
                         tasks.map(task => {
                             return (
                                 <div className="todo-task flex flex-space-between">
-                                    <p className={`task ${task.status=== 'finished' ? 'finished-task' : ''}`}>{task.name}</p>
-                                    <div className="task-actions flex flex-gap-1">
+                                    <p className={`task ${task.status=== 'finished' ? 'finished-task' : ''}`} onClick={()=>redirectToTask(task)}>
+                                        {task.name}
+                                    </p>
+                                    <div className="todo-actions flex flex-gap-1">
                                         <i className="fa-solid fa-pen-to-square" onClick={()=>toggleUpdateTask(task)}></i>
                                         <i className="fa-solid fa-trash-can" onClick={()=>deleteTask(task)}></i>
                                     </div>
@@ -89,7 +98,7 @@ const Todo = () => {
             </div>
         </main>
         <div className="task-overlay-layer flex flex-center" style={{visibility: overlay}}>
-            <div className="task-body flex flex-column ">
+            <div className="todo-task-body flex flex-column ">
                 <div className="task-header flex flex-column">
                     <div className="close flex flex-center" onClick={()=>{toggleOverlay("hidden");resetInputs()}}><i className="fa-solid fa-close"></i></div>
                 </div>

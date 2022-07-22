@@ -60,7 +60,7 @@
     color: var(--finished-task-color);
 }
 
-.task-actions >*{
+.todo-actions >*{
     color: var(--primary-color);
     cursor: pointer;
 }
@@ -73,7 +73,7 @@
     color: var(--white);
 }
 
-.task-body{
+.todo-task-body{
     background-color: var(--secondary-color);
     color: var(--dark-primary-color);
     padding: 1rem;
